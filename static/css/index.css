@@ -7,3 +7,18 @@ img {
     object-fit: cover;
     height: 225px;
 }
+
+#tabs button {
+    background-color: white;
+    border: 5px solid white;
+    justify-content: center;
+    text-align: center;
+    font-size: 1em;
+    width: 33%;
+}
+
+
+#tabs button:hover {
+    background-color: lightskyblue;
+    border: 5px solid lightskyblue;
+}
