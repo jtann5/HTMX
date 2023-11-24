@@ -1,5 +1,7 @@
-html {
+html, body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -8,14 +10,23 @@ img {
     height: 225px;
 }
 
+#tabs {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
 #tabs button {
+    flex: 1;
+    max-width: 33%;
     background-color: white;
-    border: 5px solid white;
+    border: 2px solid white;
     justify-content: center;
     text-align: center;
     font-size: 1em;
-    width: 33%;
     border-radius: .5rem;
+    box-sizing: border-box;
 }
 
 
@@ -28,4 +39,79 @@ img {
 #tabs button[aria-selected="true"] {
     border: 5px solid lightskyblue;
     background-color: lightskyblue; 
+}
+
+#footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 90px;
+    background-color: lightskyblue;
+    opacity: 80%;
+}
+
+#right {
+    float: right;
+    width: 15%;
+    justify-content: center;
+}
+
+#left {
+    float: left;
+    width: 49.5%;
+}
+
+
+#footer img {
+    padding-left: 10%;
+    width: 40px;
+    height: auto;
+}
+
+#footer img:hover {
+    opacity: 70%;
+}
+
+#htmx {
+    background-color: rgb(241, 241, 241);
+    text-align: center;
+    height: 10%; /* Adjust the height as needed */
+    padding: 10px;
+}
+
+#htmx p {
+    font-size: 1em;
+    margin: 0;
+    display: inline-block;
+}
+
+#htmx p a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: left; /* Align the text to the left within the link */
+    vertical-align: middle; /* Vertically align the link */
+}
+
+#htmx p img {
+    width: 80px;
+    height: auto;
+    border-radius: 2rem;
+    border: 1px solid black;
+    margin-right: 10px;
+    vertical-align: middle; /* Vertically align the image */
+}
+
+#htmx p img:hover {
+    opacity: 0.7;
+}
+
+
+
+#page { 
+    margin: auto;
+    padding: 1%;
+}
+
+#page h2 {
+    padding: 1%;
 }
