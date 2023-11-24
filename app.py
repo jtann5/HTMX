@@ -2,7 +2,7 @@
 from flask import Flask, render_template
 import os
 
-app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates'))
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates'), static_folder='static')
 
 @app.route('/')
 
@@ -15,7 +15,7 @@ def index():
 @app.route('/click', methods=['GET'])
 def click():
     # This is just a simple example to return some data on click
-    return "Button Clicked!"
+    return "Button Clicked motherfucker!"
 
 if __name__ == '__main__':
     app.run(debug=True)
