@@ -15,10 +15,17 @@ img {
     text-align: center;
     font-size: 1em;
     width: 33%;
+    border-radius: .5rem;
 }
 
 
 #tabs button:hover {
     background-color: lightskyblue;
     border: 5px solid lightskyblue;
+}
+
+
+#tabs button[aria-selected="true"] {
+    border: 5px solid lightskyblue;
+    background-color: lightskyblue; 
 }
