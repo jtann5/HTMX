@@ -57,13 +57,19 @@ img {
 }
 
 #left {
+    margin-top: 20px;
+    display: flex;
+    margin-left: 3%;
     float: left;
     width: 49.5%;
 }
 
+#left p {
+    margin-left: 10%;
+}
 
 #footer img {
-    padding-left: 10%;
+    padding: 10%;
     width: 40px;
     height: auto;
 }
@@ -112,6 +118,11 @@ img {
     padding: 1%;
 }
 
-#page h2 {
+#page h2, h3 {
     padding: 1%;
+}
+
+#page img {
+    width: 40%;
+    height: auto;
 }
