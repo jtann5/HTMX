@@ -123,6 +123,7 @@ img {
 }
 
 #page img {
+    padding-left: 2%;
     width: 40%;
     height: auto;
 }
