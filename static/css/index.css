@@ -44,7 +44,7 @@ img {
 #footer {
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding-top: 8px;
     height: 90px;
     background-color: lightskyblue;
     opacity: 80%;
@@ -125,4 +125,17 @@ img {
 #page img {
     width: 40%;
     height: auto;
+}
+
+#topnav {
+    margin: 10%;
+}
+
+#copyright {
+    background-color: lightskyblue;
+    opacity: 80%;
+    text-align: center;
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
