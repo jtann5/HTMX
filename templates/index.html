@@ -12,13 +12,11 @@
         <img src="{{ url_for('static', filename='images/shorterBanner.png') }}">
     </div>
     <div id="container">
-        <hr>
         <div id="tabs" hx-target="#tab-contents" role="tablist" _="on htmx:afterOnLoad set @aria-selected of <[aria-selected=true]/> to false tell the target take .selected set @aria-selected to true">
             <button role="tab" aria-controls="tab-content" aria-selected="true" hx-get="/tab1" hx-trigger="click">Home</button>
             <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab2" hx-trigger="click">Projects</button>
             <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab3" hx-trigger="click">About</button>
         </div>
-        <hr>
         <div id="tab-contents" role="tabpanel" hx-get="/tab1" hx-trigger="load"></div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {

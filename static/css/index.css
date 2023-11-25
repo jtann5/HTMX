@@ -11,7 +11,14 @@ img {
 }
 
 #tabs {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    position: sticky;
+    top: 0;
     display: flex;
+    background-color: white;
     justify-content: space-between;
     padding-left: 2%;
     padding-right: 2%;
@@ -24,20 +31,21 @@ img {
     border: 2px solid white;
     justify-content: center;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
     border-radius: .5rem;
     box-sizing: border-box;
+    margin: 1px;
 }
 
 
 #tabs button:hover {
     background-color: lightskyblue;
-    border: 5px solid lightskyblue;
+    border: 1px solid black;
 }
 
 
 #tabs button[aria-selected="true"] {
-    border: 5px solid lightskyblue;
+    border: 1px solid black;
     background-color: lightskyblue; 
 }
 
