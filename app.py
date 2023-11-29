@@ -20,14 +20,6 @@ def index():
 def download_file(filename):
     return send_from_directory('static/images', filename)
 
-@app.route('/get_images')
-def get_images():
-    image_data = []
-    image_folder = 'images'
-    for filename in os.listdir('static/images'):
-        if filename.endswith(".jpg") or filename.endswith(".png"):  # Filter by image extension
-            image_data.append({'filename': filename})
-    return jsonify(image_data)
 
 
 @app.route('/click', methods=['GET'])

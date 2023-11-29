@@ -3,55 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        #slideshow img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 10px; /* Adding some margin for better visibility */
-        }
-    </style>
 </head>
 <body>
     <div id="page">
         <h1>Home</h1>
-        <div id="slideshow">
-            <!-- Images will be loaded here -->
-        </div>
-        <button hx-get="/get_images" hx-target="#slideshow">Load Slideshow</button>
-        <script src="https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.js"></script>
+        <p>This is the home page!</p>
         
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const slideshowDiv = document.getElementById('slideshow');
         
-                function loadImages() {
-                    fetch('/get_images')
-                        .then(response => response.json())
-                        .then(images => {
-                            console.log(images); // Check if the images array is correctly received
-        
-                            slideshowDiv.innerHTML = ''; // Clear previous images if any
-        
-                            images.forEach(image => {
-                                const img = new Image();
-                                img.onload = function() {
-                                    console.log('Image loaded:', img.src); // Confirm image loading
-                                    slideshowDiv.appendChild(img);
-                                };
-                                img.onerror = function() {
-                                    console.log('Error loading image:', img.src); // Log if there's an error
-                                };
-                                img.src = `/images/${image.filename}`;
-                                img.alt = image.filename;
-                            });
-                        });
-                }
-        
-                const loadButton = document.querySelector('button');
-                loadButton.addEventListener('click', loadImages);
-            });
-        </script>
     </div>
 </body>
 </html>
