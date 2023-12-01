@@ -40,6 +40,9 @@ def tab2():
 def tab3():
     return render_template('html/tab3.html')
 
+@app.route('/tab4')
+def tab4():
+    return render_template('html/tab4.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="localhost", port=5061)
