@@ -37,7 +37,7 @@ def store():
         if int(id) < 100:
             return render_template('store.html', content='/product_page?id='+id)
         else:
-            return render_template('store.html', content='/product_not_found?id='+id)
+            return render_template('store.html', content='/product_not_found')
         
     return render_template('store.html', content='/tab4')
 
