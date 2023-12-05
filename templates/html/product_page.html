@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/index.css') }}" type="text/css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+</head>
+</head>
+<body>
+    <button onclick="goBack()">Go Back</button>
+    <script>
+        function goBack() {
+            
+            if (window.history.length > 2) {
+                window.history.back();
+            } else {
+                var newUrl = '/store';
+                window.location.href = newUrl;
+            }
+        }
+    </script>
+    <div id="page" class="product_page">
+        <h1>Product page for product id {{id}}</h1>
+        <div class="productImg"><img src="../static/images/theshorts.jpg" alt="booty shorts"></div>
+        <p>Thingy or something</p>
+        
+    </div>
+</body>
+</html>

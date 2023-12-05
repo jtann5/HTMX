@@ -1,0 +1,10 @@
+{% for product in products %}
+<a href="?id={{product.id}}">
+    <div class="prodStyle" keys={{product.id}}>
+        <div class="prodImg"><img src={{product.image}} alt={{product.name}}></div>
+        <p>{{product.name}}</p>
+        <p>${{product.price}}</p>
+        <p style="color: red;">Illegalness index: {{product.illegalness}}</p>
+    </div>
+</a>
+{% endfor %}

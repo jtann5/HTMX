@@ -14,19 +14,36 @@
     </div>
     <div id="container">
         <div id="tabs" hx-target="#tab-contents" role="tablist" _="on htmx:afterOnLoad set @aria-selected of <[aria-selected=true]/> to false tell the target take .selected set @aria-selected to true">
-            <button role="tab" aria-controls="tab-content" aria-selected="true" hx-get="/tab1" hx-trigger="click">Home</button>
-            <button role="tab" aria-controls="tab-content" aria-selected="false" id="changeUrlButton">Store</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" id="changeUrlButton1">Home</button>
+            <script>
+                document.getElementById('changeUrlButton1').addEventListener('click', function() {
+                    var newUrl = '/';
+                    window.location.href = newUrl;
+                });
+            </script>
+            <button role="tab" aria-controls="tab-content" aria-selected="true" id="changeUrlButton">Store</button>
             <script>
                 document.getElementById('changeUrlButton').addEventListener('click', function() {
                     var newUrl = '/store';
                     window.location.href = newUrl;
                 });
             </script>
-            <!-- <a href="/store" role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab4" hx-trigger="click">Store</a> -->
-            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab2" hx-trigger="click">Projects</button>
-            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab3" hx-trigger="click">About</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" id="changeUrlButton2">Projects</button>
+            <script>
+                document.getElementById('changeUrlButton2').addEventListener('click', function() {
+                    var newUrl = '/';
+                    window.location.href = newUrl;
+                });
+            </script>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" id="changeUrlButton3">About</button>
+            <script>
+                document.getElementById('changeUrlButton3').addEventListener('click', function() {
+                    var newUrl = '/';
+                    window.location.href = newUrl;
+                });
+            </script>
         </div>
-        <div id="tab-contents" role="tabpanel" hx-get="/tab1" hx-trigger="load"></div>
+        <div id="tab-contents" role="tabpanel" hx-get="{{content}}" hx-trigger="load"></div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const tabs = document.querySelectorAll('[role="tab"]');
@@ -39,12 +56,6 @@
             });
         </script>
 
-        <div id="topnav">
-            <button hx-get="/click">
-                Click Me!
-                <img class="htmx-indicator" src="{{ url_for('static', filename='images/logo.png') }}">
-            </button>
-        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  

@@ -4,13 +4,18 @@ html, body {
     padding: 0;
 }
 
+html a, a:visited, a:focus, a:active {
+    text-decoration: none;
+    color: black;
+}
+
 img {
     width: 100%;
     object-fit: cover;
     height: 225px;
 }
 
-#tabs {
+#tabs, #tabs a {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding-top: .5%;
@@ -22,9 +27,11 @@ img {
     justify-content: space-between;
     padding-left: 2%;
     padding-right: 2%;
+    text-decoration: none;
+
 }
 
-#tabs button {
+#tabs button, #tabs a {
     flex: 1;
     max-width: 24.5%;
     background-color: white;
@@ -35,13 +42,19 @@ img {
     border-radius: .5rem;
     box-sizing: border-box;
     margin: 1px;
+    text-decoration: none;
 }
 
 
-#tabs button:hover {
+
+
+#tabs button:hover, #tabs a:hover {
+    max-width: 24.5%;
     background-color: lightskyblue;
     border: 1px solid black;
+    text-decoration: none;
 }
+
 
 
 #tabs button[aria-selected="true"] {
@@ -130,7 +143,7 @@ img {
     padding: 1%;
 }
 
-#page img {
+.page_img {
     padding-left: 2%;
     width: 40%;
     height: auto;
@@ -147,4 +160,46 @@ img {
     width: 100%;
     padding-top: 1%;
     padding-bottom: 1%;
+}
+
+.prodStyle {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 250px;
+    padding: 1rem;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+.prodImg {
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 200px;  /* Set both width and height to be the same for a square container */
+    overflow: hidden;
+}
+
+.product_page h1, p{
+    text-align: center;
+}
+
+.prodImg img {
+    width: 100%;  /* Set the image to take up 100% of the container width */
+    height: 100%; /* Set the image to take up 100% of the container height */
+    object-fit: cover;  /* Maintain aspect ratio and cover the container */
+}
+
+.productImg {
+    background-color: lightskyblue;
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 400px;  /* Set both width and height to be the same for a square container */
+    overflow: hidden;
+}
+
+.productImg img {
+    width: 100%;  /* Set the image to take up 100% of the container width */
+    height: 100%; /* Set the image to take up 100% of the container height */
+    object-fit: cover;  /* Maintain aspect ratio and cover the container */
 }
