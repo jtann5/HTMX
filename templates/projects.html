@@ -31,7 +31,7 @@
             <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab3" hx-trigger="click">Tab 3</button>
             <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab4" hx-trigger="click">Tab 4</button>
         </div>
-        <div id="tab-contents" role="tabpanel" hx-get="{{content}}" hx-trigger="load"></div>
+        <div id="tab-contents" role="tabpanel" hx-get="/tab1" hx-trigger="load"></div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const tabs = document.querySelectorAll('[role="tab"]');
