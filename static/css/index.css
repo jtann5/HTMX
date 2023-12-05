@@ -31,9 +31,31 @@ img {
 
 }
 
-#tabs button, #tabs a {
+#container {
+    width:auto;
+}
+
+#topnav {
+    width: 100%;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    position: sticky;
+	padding: 0;
+}
+
+#nav li {
     flex: 1;
-    max-width: 24.5%;
+    width:24%;
+}
+
+#nav a {
+    margin: 0;
+    width: 23%;
+    padding: 5%;
     background-color: white;
     border: 2px solid white;
     justify-content: center;
@@ -41,15 +63,27 @@ img {
     font-size: 1.2em;
     border-radius: .5rem;
     box-sizing: border-box;
-    margin: 1px;
     text-decoration: none;
+    display: block;
+}
+
+#nav a:link, #nav a:visited, #nav a:active {
+	text-decoration: none;
+	letter-spacing: 2px;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+}
+
+#nav a.home {
+    background-image: url("../images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
-
-
-#tabs button:hover, #tabs a:hover {
-    max-width: 24.5%;
+#tabs button:hover, #tabs a:hover, #nav a:hover {
     background-color: lightskyblue;
     border: 1px solid black;
     text-decoration: none;
@@ -57,7 +91,7 @@ img {
 
 
 
-#tabs button[aria-selected="true"] {
+#nav a.active {
     border: 1px solid black;
     background-color: lightskyblue; 
 }
@@ -147,10 +181,6 @@ img {
     padding-left: 2%;
     width: 40%;
     height: auto;
-}
-
-#topnav {
-    margin: 10%;
 }
 
 #copyright {

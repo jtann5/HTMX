@@ -16,14 +16,37 @@
     <div id="container">
         <div id="topnav">
             <ul id="nav">
-                <li><a href="/" class="active text">Home</a></li>
+                <li><a href="/" class="text">Home</a></li>
                 <li><a href="store" class="text">Store</a></li>
-                <li><a href="projects" class="text">Projects</a></li>
+                <li><a href="projects" class="active text">Projects</a></li>
                 <li><a href="about" class="text">About</a></li>
             </ul>
         </div>
     </div>
     <hr>
+    <div id="page">
+        <div id="tabs" hx-target="#tab-contents" role="tablist" _="on htmx:afterOnLoad set @aria-selected of <[aria-selected=true]/> to false tell the target take .selected set @aria-selected to true">
+            <button role="tab" aria-controls="tab-content" aria-selected="true" hx-get="/tab1" hx-trigger="click">Tab 1</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab2" hx-trigger="click">Tab 2</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab3" hx-trigger="click">Tab 3</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab4" hx-trigger="click">Tab 4</button>
+        </div>
+        <div id="tab-contents" role="tabpanel" hx-get="{{content}}" hx-trigger="load"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const tabs = document.querySelectorAll('[role="tab"]');
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+                        tab.setAttribute('aria-selected', 'true');
+                    });
+                });
+            });
+        </script>
+    </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  
     <div id="htmx">

@@ -29,6 +29,7 @@ def index():
 
     return render_template('index.html')
 
+
 @app.route('/store')
 def store():
     id = request.args.get("id")
@@ -40,6 +41,14 @@ def store():
             return render_template('store.html', content='/product_not_found')
         
     return render_template('store.html', content='/tab4')
+
+@app.route('/projects')
+def projects():
+    return render_template('projects.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/product_page')
 def product_page():
