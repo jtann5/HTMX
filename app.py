@@ -40,7 +40,7 @@ def store():
         else:
             return render_template('store.html', content='/product_not_found')
         
-    return render_template('store.html', content='/tab4')
+    return render_template('store.html', content='/search_page')
 
 @app.route('/projects')
 def projects():
@@ -53,12 +53,12 @@ def about():
 @app.route('/product_page')
 def product_page():
     id = request.args.get("id")
-    return render_template('html/product_page.html', id=id)
+    return render_template('store/product_page.html', id=id)
 
 @app.route('/product_not_found')
 def product_not_found():
     id = request.args.get("id")
-    return render_template('html/product_not_found.html', id=id)
+    return render_template('store/product_not_found.html', id=id)
 
 @app.route('/images/logo.png')
 def download_file(filename):
@@ -81,9 +81,9 @@ def tab2():
 def tab3():
     return render_template('html/tab3.html')
 
-@app.route('/tab4')
-def tab4():
-    return render_template('html/tab4.html')
+@app.route('/search_page')
+def search_page():
+    return render_template('store/search_page.html')
 
 @app.route("/search")
 def search():
@@ -95,14 +95,14 @@ def search():
     print("Price range: " + minPrice + " to " + maxPrice)
 
     if query.lower() == "gigachad":
-        return render_template("html/cool.html")
+        return render_template("store/cool.html")
 
     products=[]
 
     for i in range(100):
         products.append(Product(id=i, name="Interplanetary Technologies Booty Shorts", image="../../static/images/theshorts.jpg", price=99.99, illegalness=10, description="SEX TIME"))
 
-    return render_template("html/search_results.html", products=products)
+    return render_template("store/search_results.html", products=products)
 
 
 if __name__ == '__main__':
