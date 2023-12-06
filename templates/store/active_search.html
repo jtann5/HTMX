@@ -1,0 +1,10 @@
+<div id="page">
+    <h1>Store</h1>
+    Search:
+    <input type="text" class="input" placeholder="Search" name="query" hx-get="/search" hx-target="#results" hx-trigger="load, keyup changed delay:10ms">
+    <br>
+    <button hx-get="/filter_search" hx-target="#container" hx-trigger="click">Click for filtered Search</button>
+    <br>
+    
+    <div id="results" style="display: flex; flex-flow: row wrap;"></div>
+</div>

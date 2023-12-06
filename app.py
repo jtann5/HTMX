@@ -47,7 +47,7 @@ def store():
     if id: 
         return render_template('store.html', content='/product_page?id='+id)
         
-    return render_template('store.html', content='/search_page')
+    return render_template('store.html', content='/active_search')
 
 @app.route('/projects')
 def projects():
@@ -92,6 +92,14 @@ def tab3():
 def search_page():
     return render_template('store/search_page.html')
 
+@app.route('/active_search')
+def active_search():
+    return render_template('store/active_search.html')
+
+@app.route('/filter_search')
+def filter_search():
+    return render_template('store/filter_search.html')
+
 @app.route("/search")
 def search():
     query = request.args.get("query")
@@ -99,9 +107,6 @@ def search():
     maxPrice = request.args.get("maxPrice")
     sortBy = request.args.get("sortBy")
     sortOrder = request.args.get("sortOrder")
-
-    print("Search Term: " + query)
-    print("Price range: " + minPrice + " to " + maxPrice)
 
     if query.lower() == "gigachad":
         return render_template("store/cool.html")

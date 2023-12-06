@@ -1,0 +1,34 @@
+<div id="page">
+    <h1>Store</h1>
+    <form hx-get="/search" hx-params="query, minPrice, maxPrice, sortBy, sortOrder" hx-target="#results" hx-trigger="load, change">
+        <label>
+            Search:
+            <input type="text" class="input" placeholder="Search" name="query" >
+        </label>
+        <br>
+        <label>
+            Price Range:
+            <input type="text" class="input" placeholder="Min Price" name="minPrice">
+            <input type="text" class="input" placeholder="Max Price" name="maxPrice">
+        </label>
+        <br>
+        <label>
+            Sort by:
+            <input type="radio" name="sortBy" value="id" checked> Relevant
+            <input type="radio" name="sortBy" value="illegalness"> Illegalness
+            <input type="radio" name="sortBy" value="price"> Price
+        </label>
+
+        <br>
+
+        <label>
+            Sort Order:
+            <input type="radio" name="sortOrder" value="ascending" checked> Ascending
+            <input type="radio" name="sortOrder" value="descending"> Descending
+        </label>
+    </form>
+    <button hx-get="/active_search" hx-target="#container" hx-trigger="click">Click for active search</button>
+    <br>
+    
+    <div id="results" style="display: flex; flex-flow: row wrap;"></div>
+</div>
