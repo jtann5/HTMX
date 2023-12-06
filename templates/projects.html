@@ -9,21 +9,7 @@
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="image">
-        <img src="{{ url_for('static', filename='images/shorterBanner.png') }}">
-    </div>
-    <hr>
-    <div id="container">
-        <div id="topnav">
-            <ul id="nav">
-                <li><a href="/" class="text">Home</a></li>
-                <li><a href="store" class="text">Store</a></li>
-                <li><a href="projects" class="active text">Projects</a></li>
-                <li><a href="about" class="text">About</a></li>
-            </ul>
-        </div>
-    </div>
-    <hr>
+    <div hx-get="/elements/header?page=project" hx-trigger="load" hx-swap="outerHTML"></div>
     <div id="page">
         <div id="tabs" hx-target="#tab-contents" role="tablist" _="on htmx:afterOnLoad set @aria-selected of <[aria-selected=true]/> to false tell the target take .selected set @aria-selected to true">
             <button role="tab" aria-controls="tab-content" aria-selected="true" hx-get="/tab1" hx-trigger="click">Tab 1</button>

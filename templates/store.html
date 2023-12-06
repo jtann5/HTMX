@@ -9,40 +9,8 @@
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="image">
-        <img src="{{ url_for('static', filename='images/shorterBanner.png') }}">
-    </div>
+    <div hx-get="/elements/header?page=home" hx-trigger="load" hx-swap="outerHTML"></div>
     <div id="container">
-        <div id="tabs" hx-target="#tab-contents" role="tablist" _="on htmx:afterOnLoad set @aria-selected of <[aria-selected=true]/> to false tell the target take .selected set @aria-selected to true">
-            <button role="tab" aria-controls="tab-content" aria-selected="false" id="changeUrlButton1">Home</button>
-            <script>
-                document.getElementById('changeUrlButton1').addEventListener('click', function() {
-                    var newUrl = '/';
-                    window.location.href = newUrl;
-                });
-            </script>
-            <button role="tab" aria-controls="tab-content" aria-selected="true" id="changeUrlButton">Store</button>
-            <script>
-                document.getElementById('changeUrlButton').addEventListener('click', function() {
-                    var newUrl = '/store';
-                    window.location.href = newUrl;
-                });
-            </script>
-            <button role="tab" aria-controls="tab-content" aria-selected="false" id="changeUrlButton2">Projects</button>
-            <script>
-                document.getElementById('changeUrlButton2').addEventListener('click', function() {
-                    var newUrl = '/';
-                    window.location.href = newUrl;
-                });
-            </script>
-            <button role="tab" aria-controls="tab-content" aria-selected="false" id="changeUrlButton3">About</button>
-            <script>
-                document.getElementById('changeUrlButton3').addEventListener('click', function() {
-                    var newUrl = '/';
-                    window.location.href = newUrl;
-                });
-            </script>
-        </div>
         <div id="tab-contents" role="tabpanel" hx-get="{{content}}" hx-trigger="load"></div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {

@@ -9,20 +9,7 @@
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="image">
-        <img src="{{ url_for('static', filename='images/shorterBanner.png') }}">
-    </div>
-    <hr>
-    <div id="container">
-        <div id="topnav">
-            <ul id="nav">
-                <li><a href="/" class="active text">Home</a></li>
-                <li><a href="store" class="text">Store</a></li>
-                <li><a href="projects" class="text">Projects</a></li>
-                <li><a href="about" class="text">About</a></li>
-            </ul>
-        </div>
-    </div>
+    <div hx-get="/elements/header?page=home" hx-trigger="load" hx-swap="outerHTML"></div>
     <hr>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  

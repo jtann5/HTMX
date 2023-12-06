@@ -21,9 +21,11 @@
         }
     </script>
     <div id="page" class="product_page">
-        <h1>Product page for product id {{id}}</h1>
-        <div class="productImg"><img src="../static/images/theshorts.jpg" alt="booty shorts"></div>
-        <p>Thingy or something</p>
+        <h1>{{product.name}}</h1>
+        <div class="productImg"><img src="{{product.image}}" alt="booty shorts"></div>
+        <h3>${{product.price}}</h3>
+        <h3 style="color: red;">Illegalness index: {{product.illegalness}}</h3>
+        <p>{{product.description}}</p>
         
     </div>
 </body>

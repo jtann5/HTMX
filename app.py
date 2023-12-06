@@ -29,6 +29,11 @@ def index():
 
     return render_template('index.html')
 
+@app.route('/elements/header')
+def header():
+    page = request.args.get("page")
+    return render_template('elements/header.html', page=page)
+
 
 @app.route('/store')
 def store():
@@ -53,12 +58,12 @@ def about():
 @app.route('/product_page')
 def product_page():
     id = request.args.get("id")
-    return render_template('store/product_page.html', id=id)
-
+    product = Product(id=id, name="Interplanetary Technologies Booty Shorts", image="../../static/images/theshorts.jpg", price=99.99, illegalness=10, description="SEX TIME")
+    return render_template('store/product_page.html', product=product)
+    
 @app.route('/product_not_found')
 def product_not_found():
-    id = request.args.get("id")
-    return render_template('store/product_not_found.html', id=id)
+    return render_template('store/product_not_found.html')
 
 @app.route('/images/logo.png')
 def download_file(filename):

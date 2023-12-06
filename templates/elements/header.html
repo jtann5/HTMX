@@ -1,0 +1,30 @@
+<div id="header">
+    <div id="image">
+        <img src="{{ url_for('static', filename='images/shorterBanner.png') }}">
+    </div>
+    <div id="container">
+        <div id="tabs">
+            <button role="tab" aria-controls="tab-content" aria-selected="false" id="home">Home</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" id="store">Store</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" id="projects">Projects</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" id="about">About</button>
+            <script type="text/javascript">
+                const button = document.getElementById('{{page}}')
+                button.setAttribute('aria-selected', 'true');
+
+                document.getElementById('home').addEventListener('click', function() {
+                    window.location.href = '/';
+                });
+                document.getElementById('store').addEventListener('click', function() {
+                    window.location.href = '/store';
+                });
+                document.getElementById('projects').addEventListener('click', function() {
+                    window.location.href = '/projects';
+                });
+                document.getElementById('about').addEventListener('click', function() {
+                    window.location.href = '/about';
+                });
+            </script>
+        </div>
+    </div>
+</div>
