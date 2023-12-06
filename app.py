@@ -3,6 +3,7 @@ from flask import Flask, render_template, send_from_directory, jsonify, request,
 from flask_sqlalchemy import SQLAlchemy
 import itertools
 import os
+import pandas as pd
 
 app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates'), static_folder='static')
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
@@ -44,10 +45,7 @@ def store():
     id = request.args.get("id")
 
     if id: 
-        if int(id) < 100:
-            return render_template('store.html', content='/product_page?id='+id)
-        else:
-            return render_template('store.html', content='/product_not_found')
+        return render_template('store.html', content='/product_page?id='+id)
         
     return render_template('store.html', content='/search_page')
 
@@ -62,8 +60,12 @@ def about():
 @app.route('/product_page')
 def product_page():
     id = request.args.get("id")
-    product = Product(id=id, name="Interplanetary Technologies Booty Shorts", image="../../static/images/theshorts.jpg", price=99.99, illegalness=10, description="SEX TIME")
-    return render_template('store/product_page.html', product=product)
+    product = Product.query.filter(Product.id == id).first()
+
+    if product:
+        return render_template('store/product_page.html', product=product)
+    else:
+        return render_template('store.html', content='/product_not_found')
     
 @app.route('/product_not_found')
 def product_not_found():
@@ -99,20 +101,63 @@ def search():
     query = request.args.get("query")
     minPrice = request.args.get("minPrice")
     maxPrice = request.args.get("maxPrice")
+    sortBy = request.args.get("sortBy")
+    sortOrder = request.args.get("sortOrder")
 
     print("Search Term: " + query)
     print("Price range: " + minPrice + " to " + maxPrice)
 
     if query.lower() == "gigachad":
         return render_template("store/cool.html")
+    
+    # Start building the base query
+    base_query = Product.query
 
-    products=[]
+    # Apply filters based on parameters
+    if query:
+        base_query = base_query.filter(Product.name.ilike(f"%{query}%"))
+    if minPrice:
+        base_query = base_query.filter(Product.price >= float(minPrice))
+    if maxPrice:
+        base_query = base_query.filter(Product.price <= float(maxPrice))
 
-    for i in range(100):
-        products.append(Product(id=i, name="Interplanetary Technologies Booty Shorts", image="../../static/images/theshorts.jpg", price=99.99, illegalness=10, description="SEX TIME"))
+    # Apply sorting based on parameters
+    if sortBy:
+        sort_column = getattr(Product, sortBy)
+        if sortOrder.lower() == 'descending':
+            base_query = base_query.order_by(sort_column.desc())
+        else:
+            base_query = base_query.order_by(sort_column.asc())
+
+    # Execute the final query
+    products = base_query.all()
 
     return render_template("store/search_results.html", products=products)
 
+def add_data_from_csv(csv_file_path):
+    # Read CSV file into a pandas DataFrame
+    df = pd.read_csv(csv_file_path)
+
+    # Iterate through the rows and add data to the database
+    for index, row in df.iterrows():
+        product = Product(
+            name=row['name'],
+            image=row['image'],
+            price=row['price'],
+            illegalness=row['illegalness'],
+            description=row['description']
+        )
+        db.session.add(product)
+
+    # Commit the changes to the database
+    db.session.commit()
 
 if __name__ == '__main__':
+    #inp = input("Create database: ")
+    #if inp.lower() == 'y' or inp.lower() == 'yes':
+    with app.app_context():
+        db.drop_all()
+        db.create_all()
+        add_data_from_csv('data.csv')
+
     app.run(debug=True, host="localhost", port=3061)

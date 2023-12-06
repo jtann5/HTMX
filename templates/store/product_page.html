@@ -23,7 +23,7 @@
     <div id="page" class="product_page">
         <h1>{{product.name}}</h1>
         <div class="productImg"><img src="{{product.image}}" alt="booty shorts"></div>
-        <h3>${{product.price}}</h3>
+        <h3>${{ "%.2f"|format(product.price) }}</h3>
         <h3 style="color: red;">Illegalness index: {{product.illegalness}}</h3>
         <p>{{product.description}}</p>
         
