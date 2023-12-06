@@ -9,70 +9,11 @@
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div hx-get="/elements/header?page=home" hx-trigger="load" hx-swap="outerHTML"></div>
+    <div hx-get="/elements/header?page=store" hx-trigger="load" hx-swap="outerHTML"></div>
     <div id="container">
         <div id="tab-contents" role="tabpanel" hx-get="{{content}}" hx-trigger="load"></div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const tabs = document.querySelectorAll('[role="tab"]');
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', function() {
-                        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-                        tab.setAttribute('aria-selected', 'true');
-                    });
-                });
-            });
-        </script>
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- 
-    <div id="htmx">
-        <!-- The htmx logo triggering confirmation -->
-        <p>Website powered by 
-            <a href="#" id="htmx-logo">
-                <img src="{{ url_for('static', filename='images/htmx.jpg') }}" hx-get="/confirmation" hx-trigger="click">
-            </a>
-        </p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        // Event listener for htmx logo click
-        document.getElementById('htmx-logo').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevents the default link behavior
-            
-            // Show the confirmation dialogue
-            Swal.fire({
-                title: 'Confirm',
-                text: 'Do you want to continue?',
-                showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'No',
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // If confirmed, proceed to redirect
-                    window.location.href = 'https://htmx.org/'; // Replace with your URL
-                } else {
-                    // Handle if 'No' is clicked
-                    // Optional: You can add specific actions here if needed
-                }
-            });
-        });
-    </script>
-
-
-    <div id="footer">
-        <hr>
-        <div id="left">
-            <a href="mailto:technologiesinterplanetary@gmail.com"><img src="{{ url_for('static', filename='images/logo.png') }}"></a>
-            <p>Contact Us: <a href="mailto:technologiesinterplanetary@gmail.com">technologiesinterplanetary@gmail.com</a></p>
-            
-        </div>
-        <div id="right">
-            <a href="https://www.youtube.com/@interplanetarytechnologies"><img src="{{ url_for('static', filename='images/youtubeicon.png') }}"></a>
-        </div>
-    </div>
-    <div id="copyright"><hr>Interplanetary Technologies ©</div>
+    <div hx-get="/elements/footer" hx-trigger="load" hx-swap="outerHTML"></div>
 </body>
 </html>

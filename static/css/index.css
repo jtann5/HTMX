@@ -15,7 +15,7 @@ img {
     height: 225px;
 }
 
-#tabs, #tabs a {
+#navs, #navs a {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     padding-top: .5%;
@@ -31,31 +31,9 @@ img {
 
 }
 
-#container {
-    width:auto;
-}
-
-#topnav {
-    width: 100%;
-}
-
-#nav {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    position: sticky;
-	padding: 0;
-}
-
-#nav li {
+#navs button, #navs a {
     flex: 1;
-    width:24%;
-}
-
-#nav a {
-    margin: 0;
-    width: 23%;
-    padding: 5%;
+    max-width: 24.5%;
     background-color: white;
     border: 2px solid white;
     justify-content: center;
@@ -63,27 +41,15 @@ img {
     font-size: 1.2em;
     border-radius: .5rem;
     box-sizing: border-box;
+    margin: 1px;
     text-decoration: none;
-    display: block;
-}
-
-#nav a:link, #nav a:visited, #nav a:active {
-	text-decoration: none;
-	letter-spacing: 2px;
-	text-align: center;
-	display: inline-block;
-	width: 100%;
-}
-
-#nav a.home {
-    background-image: url("../images/logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 
-#tabs button:hover, #tabs a:hover, #nav a:hover {
+
+
+#navs button:hover, #navs a:hover {
+    max-width: 24.5%;
     background-color: lightskyblue;
     border: 1px solid black;
     text-decoration: none;
@@ -91,7 +57,7 @@ img {
 
 
 
-#nav a.active {
+#navs button[aria-selected="true"] {
     border: 1px solid black;
     background-color: lightskyblue; 
 }
@@ -181,6 +147,10 @@ img {
     padding-left: 2%;
     width: 40%;
     height: auto;
+}
+
+#topnav {
+    margin: 10%;
 }
 
 #copyright {

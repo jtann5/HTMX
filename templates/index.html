@@ -10,55 +10,13 @@
 </head>
 <body>
     <div hx-get="/elements/header?page=home" hx-trigger="load" hx-swap="outerHTML"></div>
-    <hr>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- 
-    <div id="htmx">
-        <!-- The htmx logo triggering confirmation -->
-        <p>Website powered by 
-            <a href="#" id="htmx-logo">
-                <img src="{{ url_for('static', filename='images/htmx.jpg') }}" hx-get="/confirmation" hx-trigger="click">
-            </a>
+    <div id="page"><h1>Home page goes here</h1>
+        <h2>Words</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        // Event listener for htmx logo click
-        document.getElementById('htmx-logo').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevents the default link behavior
-            
-            // Show the confirmation dialogue
-            Swal.fire({
-                title: 'Confirm',
-                text: 'Do you want to continue?',
-                showCancelButton: true,
-                confirmButtonText: 'Yes',
-                cancelButtonText: 'No',
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // If confirmed, proceed to redirect
-                    window.location.href = 'https://htmx.org/'; // Replace with your URL
-                } else {
-                    // Handle if 'No' is clicked
-                    // Optional: You can add specific actions here if needed
-                }
-            });
-        });
-    </script>
-
-
-    <div id="footer">
-        <hr>
-        <div id="left">
-            <a href="mailto:technologiesinterplanetary@gmail.com"><img src="{{ url_for('static', filename='images/logo.png') }}"></a>
-            <p>Contact Us: <a href="mailto:technologiesinterplanetary@gmail.com">technologiesinterplanetary@gmail.com</a></p>
-            
-        </div>
-        <div id="right">
-            <a href="https://www.youtube.com/@interplanetarytechnologies"><img src="{{ url_for('static', filename='images/youtubeicon.png') }}"></a>
-        </div>
-    </div>
-    <div id="copyright"><hr>Interplanetary Technologies ©</div>
+ 
+    <div hx-get="/elements/footer" hx-trigger="load" hx-swap="outerHTML"></div>
 </body>
 </html>

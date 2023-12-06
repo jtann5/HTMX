@@ -34,6 +34,10 @@ def header():
     page = request.args.get("page")
     return render_template('elements/header.html', page=page)
 
+@app.route('/elements/footer')
+def footer():
+    return render_template('elements/footer.html')
+
 
 @app.route('/store')
 def store():
