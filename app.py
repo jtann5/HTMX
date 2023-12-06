@@ -65,11 +65,7 @@ def product_page():
     if product:
         return render_template('store/product_page.html', product=product)
     else:
-        return render_template('store.html', content='/product_not_found')
-    
-@app.route('/product_not_found')
-def product_not_found():
-    return render_template('store/product_not_found.html')
+        return render_template('store/product_not_found.html')
 
 @app.route('/images/logo.png')
 def download_file(filename):
