@@ -20,3 +20,14 @@ or in an IDE like VSCode open the project go to the app.py file and click run!
 
 Then to reach the website go to http://localhost:3061/
 
+
+# Tech Summary
+
+# Individual member notes
+
+# Conclusion
+
+# References
+https://htmx.org/
+https://chat.openai.com/
+
