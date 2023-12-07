@@ -7,6 +7,41 @@
     <link rel="icon" type="image/x-icon" href="../static/images/logo.png">
     <link href="{{ url_for('static', filename='css/index.css') }}" type="text/css" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <style>
+        #tabs button[aria-selected="true"] {
+            border: 1px solid black;
+            background-color: lightskyblue; 
+        }
+
+        #tabs {
+            display: flex;
+            background-color: white;
+            padding-left: 2%;
+            padding-right: 2%;
+            text-decoration: none;
+            width: 50%;
+        }
+
+        #tabs button {
+            flex: 1;
+            background-color: white;
+            border: 2px solid white;
+            justify-content: center;
+            text-align: center;
+            font-size: .9em;
+            border-radius: .12rem;
+            box-sizing: border-box;
+            margin: 1px;
+            text-decoration: none;
+        }
+
+        #tabs button:hover {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
     <div hx-get="/elements/header?page=projects" hx-trigger="load" hx-swap="outerHTML"></div>
