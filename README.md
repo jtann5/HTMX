@@ -12,6 +12,8 @@ pip install pandas
 
 In order to run the server to get the Interplanetary Technologies website in the terminal type:
 
+
 ```python app.py```
+
 
 or in an IDE like VSCode open the project go to the app.py file and click run!
