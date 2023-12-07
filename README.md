@@ -18,5 +18,5 @@ In order to run the server to get the Interplanetary Technologies website in the
 
 or in an IDE like VSCode open the project go to the app.py file and click run!
 
-Then to reach the website goto http://localhost:3061/
+Then to reach the website go to http://localhost:3061/
 
