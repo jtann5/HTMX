@@ -10,6 +10,11 @@ pip install pandas
 
 **Server will run on port 3061 on localhost, make sure no other services are using that port!**
 
+**If you are unable to use port 3061 use the following code to change the port number to one that suites you!**
+
+```app.run(debug=True, host="localhost", port=3061)```
+
+
 In order to run the server to get the Interplanetary Technologies website in the terminal type:
 
 
