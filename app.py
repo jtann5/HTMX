@@ -88,6 +88,10 @@ def tab2():
 def tab3():
     return render_template('html/tab3.html')
 
+@app.route('/tab4')
+def tab4():
+    return render_template('html/tab4.html')
+
 @app.route('/search_page')
 def search_page():
     return render_template('store/search_page.html')

@@ -12,10 +12,10 @@
     <div hx-get="/elements/header?page=projects" hx-trigger="load" hx-swap="outerHTML"></div>
     <div id="page">
         <div id="tabs" hx-target="#tab-contents" role="tablist" _="on htmx:afterOnLoad set @aria-selected of <[aria-selected=true]/> to false tell the target take .selected set @aria-selected to true">
-            <button role="tab" aria-controls="tab-content" aria-selected="true" hx-get="/tab1" hx-trigger="click">Tab 1</button>
-            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab2" hx-trigger="click">Tab 2</button>
-            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab3" hx-trigger="click">Tab 3</button>
-            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab4" hx-trigger="click">Tab 4</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="true" hx-get="/tab1" hx-trigger="click">Chem-E Car 2023</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab2" hx-trigger="click">Rocket Skateboard</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab3" hx-trigger="click">Rocket Pie 2.0</button>
+            <button role="tab" aria-controls="tab-content" aria-selected="false" hx-get="/tab4" hx-trigger="click">Rocket Pie 1.0</button>
         </div>
         <div id="tab-contents" role="tabpanel" hx-get="/tab1" hx-trigger="load"></div>
         <script>
