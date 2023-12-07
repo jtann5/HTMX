@@ -1,4 +1,4 @@
-# HTMX
+# HTMX Website
 
 # Running Instructions
 **Make sure that you have these python packages installed on your computer using these commands!**
