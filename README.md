@@ -50,9 +50,13 @@ Our objective was to leverage HTMX to design and implement a custom web applicat
 
 # Features
 Tabs - Used to changed page content without refreshing URL.
+
 Confirm Button - Can be used for extra function on back end using HTMX.
+
 Store - Uses HTMX to return products, as well as using HTMX for the Search.
+
 Product Page - Uses a template returned by HTMX and populated with an SQL query and flask.
+
 Product Not Found - Uses HTMX to return content.
 
 # Tech Summary
