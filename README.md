@@ -11,6 +11,8 @@ Links:
 
 Mike Kadoshnikov: http://csci331.cs.montana.edu:3061/
 
+Jacob Tanner: http://csci331.cs.montana.edu:3070
+
 
 Presentation: https://github.com/jtann5/HTMX/blob/main/Presentation/HTMX.pptx
 
@@ -64,6 +66,11 @@ Product Not Found - Uses HTMX to return content.
 The project uses Flask, a python library, and HTMX, a Javascript Library. Flask is a web-application library that allows individuals to created a web application using Python.  Flask allows users to specify get requests and does the work to retrieve, access, and control the website. HTMX is a Hyper Media focused JavaScript library that allows individuals to create RESTFUL web applications that allow the HTML to shine. HTMX works by allowing the user to send various requests to the backend web server such as hx-get, hx-trigger, etc.
 
 # Individual member notes
+## Mike Kadoshnikov
+MIKE WORDS!!!
+
+## Jacob Tanner
+
 
 # Conclusion
 
