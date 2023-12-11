@@ -61,6 +61,8 @@ Product Not Found - Uses HTMX to return content.
 
 # Tech Summary
 
+The project uses Flask, a python library, and HTMX, a Javascript Library. Flask is a web-application library that allows individuals to created a web application using Python.  Flask allows users to specify get requests and does the work to retrieve, access, and control the website. HTMX is a Hyper Media focused JavaScript library that allows individuals to create RESTFUL web applications that allow the HTML to shine. HTMX works by allowing the user to send various requests to the backend web server such as hx-get, hx-trigger, etc.
+
 # Individual member notes
 
 # Conclusion
