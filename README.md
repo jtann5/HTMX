@@ -65,7 +65,8 @@ The project uses Flask, a python library, and HTMX, a Javascript Library. Flask 
 
 # Individual member notes
 ## Mike Kadoshnikov
-MIKE WORDS!!!
+Initially we didn't know the framework to choose, so we ended up using Flask, and I primarily started the Flask app, as well as trying to figure out how to get HTMX to work with flask. 
+Tasks related directly to HTMX that I had undertook was figuring out how to get the tabs, and a confirmation button for redirecting to another site. Most of the app consisted of creating HTML files as HTMX is Hyper Media based meaning it primarily uses HTML. The HTML that deals with tabs were primarily done by me, but we collaboritively worked on most of the shared files.
 
 ## Jacob Tanner
 The header and footer are both retrived using HTMX. A div with hx-get is used to issue a GET request to get the respective element when the page loads. The reponse replaces the div and the header GET request uses a page paramater to set a given page to active in the topnav. The store page uses a div with an hx-get to retrive a page that is specified by the Flask server. The active search uses an <input> with a hx-get to issue a GET request with the seach term in the input field. The filtered search uses a <form> with a hx-get to issue a GET request with paramaters specified with hx-params and input fileds within the form.
