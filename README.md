@@ -66,7 +66,16 @@ The project uses Flask, a python library, and HTMX, a Javascript Library. Flask 
 MIKE WORDS!!!
 
 ## Jacob Tanner
+The header and footer are both retrived using HTMX. A div with hx-get is used to issue a GET request to get the respective element when the page loads. The reponse replaces the div and the header GET request uses a page paramater to set a given page to active in the topnav. The store page uses a div with an hx-get to retrive a page that is specified by the Flask server. The active search uses an <input> with a hx-get to issue a GET request with the seach term in the input field. The filtered search uses a <form> with a hx-get to issue a GET request with paramaters specified with hx-params and input fileds within the form.
+```
+ <div hx-get="/elements/header?page=store" hx-trigger="load" hx-swap="outerHTML"></div>
+ <div hx-get="/elements/footer" hx-trigger="load" hx-swap="outerHTML"></div>
 
+<div id="tab-contents" role="tabpanel" hx-get="{{content}}" hx-trigger="load"></div>
+
+<input type="text" class="input" placeholder="Search" name="query" hx-get="/search" hx-target="#results" hx-trigger="load, keyup changed delay:10ms">
+ <form hx-get="/search" hx-params="query, minPrice, maxPrice, sortBy, sortOrder" hx-target="#results" hx-trigger="load, change">
+```
 
 # Conclusion
 
@@ -78,7 +87,6 @@ YouTube. (2023). YouTube. Retrieved December 11, 2023, from https://www.youtube.
 
 HTMX - high power tools for HTML. htmx - high power tools for html. (n.d.). https://htmx.org/ 
 
-**NOTE: ChatGPT was used to get started with Flask, as well as helping with SQL Statements for Flask sqlalchemy. As we were unfamiliar with the Framework!**
-
 Chatgpt. ChatGPT. (n.d.). https://openai.com/chatgpt 
 
+**NOTE: ChatGPT was used to get started with Flask, as well as helping with SQL Statements for Flask sqlalchemy. As we were unfamiliar with the Framework!**
