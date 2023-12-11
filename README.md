@@ -49,13 +49,13 @@ Tabs - Used to changed page content without refreshing URL.
 
 Confirm Button - Can be used for extra function on back end using HTMX.
 
-Store - Uses HTMX to return products, as well as using HTMX for the Search.
+Store - Uses HTMX to retrieve a page specified by Flask server
 
-Product Page - Uses a template returned by HTMX and populated with an SQL query and flask.
+Product Page - Retrieves template with HTMX populated with an SQL query and Flask.
 
-Product Not Found - Uses HTMX to return content.
+Product Not Found - Retrieves template using HTMX.
 
-Search - Uses HTMX to send search paramaters to Flask server and put the response in the results section of the page.
+Search - Uses HTMX to send search parameters to Flask server (issues an SQL query with parameters) and put the response in the results section of the page.
 
 # Objectives
 
