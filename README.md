@@ -1,13 +1,9 @@
 # HTMX Website (Group 39)
 
-Group Members:
-
-Mike Kadoshnikov
-
-Jacob Tanner
+Group Members: Mike Kadoshnikov and Jacob Tanner
 
 
-Links:
+## Links
 
 Mike Kadoshnikov: http://csci331.cs.montana.edu:3061/
 
@@ -16,7 +12,7 @@ Jacob Tanner: http://csci331.cs.montana.edu:3070
 
 Presentation: https://github.com/jtann5/HTMX/blob/main/Presentation/HTMX.pptx
 
-# Running Instructions
+## Running Instructions
 **Make sure that you have these python packages installed on your computer using these commands!**
 ```
 pip install Flask
