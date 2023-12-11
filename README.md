@@ -1,4 +1,4 @@
-![image](https://github.com/jtann5/HTMX/assets/35706715/ca796fff-a5ea-47d2-b313-26a2324d1070)# HTMX Website (Group 39)
+# HTMX Website (Group 39)
 
 Group Members:
 
