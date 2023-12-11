@@ -1,4 +1,4 @@
-# HTMX Website
+# HTMX Website (Group 39)
 
 # Running Instructions
 **Make sure that you have these python packages installed on your computer using these commands!**
