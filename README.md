@@ -65,11 +65,15 @@ Product Not Found - Uses HTMX to return content.
 
 # Conclusion
 
+HTMX allows individuals to create a Full-Stack Web Application with a minimal use of Javascript, allowing for a HyperMedia focused site, as well as a backend of your choosing. The use of individual pages on the topnav was the best initiaitive (described below). The templates for various reused items worked really well and reduced redundancy. Within the project we needed access to store items, initially each page was using the HTMX Tab ability, but we found that it made retrieving individual items rather complicated and would present challenges if a user would ever want to share a product or if you refreshed the page as it would default to the home page. We would opt to restructure the CSS, as it was rather disorganized with the templates. Fetching the Footer and Header was an amazing attribute of HTMX that we would absolutely use again.
+
 # References
 
+YouTube. (2023). YouTube. Retrieved December 11, 2023, from https://www.youtube.com/watch?v=PWEl1ysbPAY&amp;t=111s. 
 
-https://htmx.org/
+HTMX - high power tools for HTML. htmx - high power tools for html. (n.d.). https://htmx.org/ 
 
+**NOTE: ChatGPT was used to get started with Flask, as well as helping with SQL Statements for Flask sqlalchemy. As we were unfamiliar with the Framework!**
 
-https://chat.openai.com/
+Chatgpt. ChatGPT. (n.d.). https://openai.com/chatgpt 
 
