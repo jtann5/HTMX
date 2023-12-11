@@ -5,6 +5,8 @@ Group Members: Mike Kadoshnikov and Jacob Tanner
 
 ## Links
 
+GitHub: https://github.com/jtann5/HTMX
+
 Mike Kadoshnikov: http://csci331.cs.montana.edu:3061/
 
 Jacob Tanner: http://csci331.cs.montana.edu:3070
@@ -69,16 +71,7 @@ Initially we didn't know the framework to choose, so we ended up using Flask, an
 Tasks related directly to HTMX that I had undertook was figuring out how to get the tabs, and a confirmation button for redirecting to another site. Most of the app consisted of creating HTML files as HTMX is Hyper Media based meaning it primarily uses HTML. The HTML that deals with tabs were primarily done by me, but we collaboritively worked on most of the shared files.
 
 ## Jacob Tanner
-The header and footer are both retrived using HTMX. A div with hx-get is used to issue a GET request to get the respective element when the page loads. The reponse replaces the div and the header GET request uses a page paramater to set a given page to active in the topnav. The store page uses a div with an hx-get to retrive a page that is specified by the Flask server. The active search uses an <input> with a hx-get to issue a GET request with the seach term in the input field. The filtered search uses a <form> with a hx-get to issue a GET request with paramaters specified with hx-params and input fileds within the form.
-```
- <div hx-get="/elements/header?page=store" hx-trigger="load" hx-swap="outerHTML"></div>
- <div hx-get="/elements/footer" hx-trigger="load" hx-swap="outerHTML"></div>
-
-<div id="tab-contents" role="tabpanel" hx-get="{{content}}" hx-trigger="load"></div>
-
-<input type="text" class="input" placeholder="Search" name="query" hx-get="/search" hx-target="#results" hx-trigger="load, keyup changed delay:10ms">
- <form hx-get="/search" hx-params="query, minPrice, maxPrice, sortBy, sortOrder" hx-target="#results" hx-trigger="load, change">
-```
+My main focus was getting a store with products that you could search. On the store page I used a div with an hx-get to retrive a page that is specidifed by the Flask server. That active search and filtered search both use HTMX to set a GET request to the Flask server with the user's search parameters. I had the Flask server then create an SQL query with the parameters and return the answers using a template. The HTMX put the response in the results div. I also later used HTMX to retrived both the header and footer. A div with hx-get is used to issue a GET request to get the respective element when the page loads. The reponse replaces the div and the header GET request uses a page paramater to set a given page to active in the topnav.
 
 # Conclusion
 
